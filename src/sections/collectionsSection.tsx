@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Button from "@/components/button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
 
 const collections = [
   {
@@ -73,21 +74,30 @@ const CardList = () => {
   const [activeTab, setActiveTab] = useState("all");
   return (
     <>
-      <div className={"flex justify-start items-center gap-[8px] flex-wrap"}>
-        {collections.map((collection) => (
-          <Button
-            key={collection.id}
-            className={cn(
-              "text-sm bg-[#E8E9EA] rounded-[12px]",
-              collection.id === activeTab && "bg-neutral-800 text-white",
-            )}
-            onClick={() => {
-              setActiveTab(collection.id);
-            }}
-          >
-            {collection.label}
-          </Button>
-        ))}
+      <div
+        className={
+          "w-full flex max-lg:flex-col justify-between items-start lg:items-center gap-[10px]"
+        }
+      >
+        <div className={"flex justify-start items-center gap-[8px] flex-wrap"}>
+          {collections.map((collection) => (
+            <Button
+              key={collection.id}
+              className={cn(
+                "text-sm bg-[#E8E9EA] rounded-[12px]",
+                collection.id === activeTab && "bg-neutral-800 text-white",
+              )}
+              onClick={() => {
+                setActiveTab(collection.id);
+              }}
+            >
+              {collection.label}
+            </Button>
+          ))}
+        </div>
+        <Link href={"#"} className={"underline font-semibold text-[14px]"}>
+          View more
+        </Link>
       </div>
       <div
         className={

@@ -172,7 +172,9 @@ const Burger = () => {
                 );
               })}
             </div>
-            <div className={"flex justify-center items-center w-full"}>
+            <div
+              className={"flex justify-center items-center w-full"}
+            >
               <Buttons />
             </div>
           </div>
