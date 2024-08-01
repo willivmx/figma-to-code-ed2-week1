@@ -11,7 +11,7 @@ const Button: React.FC<ButtonProps> = ({ children, className, ...props }) => {
     <button
       type="button"
       className={cn(
-        "flex justify-center items-center px-[26px] py-[10px] outline-none hover:opacity-85 transition-all font-semibold",
+        "flex justify-center items-center px-[26px] py-[10px] outline-none hover:brightness-90 transition-all font-semibold",
         className,
       )}
       {...props}
